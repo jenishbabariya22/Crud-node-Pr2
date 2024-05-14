@@ -49,6 +49,9 @@ app.post('/addrecord', (req, res) => {
         record = editdata;
         return res.redirect('/');
     } else {
+        if(!task){
+            return res.redirect('/');
+        }
         record.push(obj);
         return res.redirect('/');
     }
